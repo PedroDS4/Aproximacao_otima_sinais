@@ -175,5 +175,5 @@ $$
 então
 
 $$
-4 sen(t)|_{-2}^{2} - \int_{-2}^{2} t^2 cos(t)dt = 8 sen(2) - 4sen(2) - 8cos(2) = 4sen(2) - 8cos(2) 
+4sen(t)|_{-2}^{2} - \int_{-2}^{2} t^2 cos(t)dt = 8 sen(2) - 4sen(2) - 8cos(2) = 4sen(2) - 8cos(2) 
 $$
