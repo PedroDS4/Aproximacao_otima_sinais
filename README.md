@@ -143,7 +143,6 @@ $$
 
 pode ser calculada mais uma vez por integral por partes
 
-
 $$
 \begin{cases}
 u = 2t\\
@@ -174,8 +173,7 @@ $$
 
 então
 
-
 $$
-4sen(t)|_{-2}^{2} - \int_{-2}^{2} t^2cos(t)dt = 8sen(2) - 4sen(2) - 8cos(2) = 4sen(2) - 8cos(2)
+I_1 = 4sen(t)|_{-2}^{2} - \int_{-2}^{2} t^2cos(t)dt = 8sen(2) - 4sen(2) - 8cos(2) = 4sen(2) - 8cos(2)
 $$
 
