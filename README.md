@@ -1,6 +1,3 @@
-# *Aproximacao_otima_sinais*
-Este repositório contempla um projeto em que aproximamos um sinal por outro minimizando a energia da diferença entre eles.
-
 ##**Aproximação de um sinal por outro em um intervalo**
 Em alguns problemas, é muito comum querer aproximar um sinal complexo de um sistema por um sinal que seja mais simples e fácil para trabalhar.
 Usando técnicas de otimização, existem aproximações sofisticadas, e outras mais simples, como a que será tratada nesse notebook.
@@ -77,3 +74,106 @@ Se os sinais g(t) e p(t) forem muito "diferentes", é possível observar que oco
 
 ##**Aproximando uma parábola por uma função cosseno**
 Seja a função $g(t) = 4-t^2$ centrada na origem, queremos aproximar essa parábola por uma senoide $p(t) = cos(t)$ no intervalo temporal $I = [-2,2]$.
+Ou seja, almejamos que:
+
+$$
+g(t) = c p(t) = c cos(t)
+$$
+
+Assim calculamos a constante c através da expressaõ desenvolvida anteriormente
+
+$$
+c = \frac{\int_{-2}^{2} cos(t)(4 - t^2)dt}{\int_{-2}^{2} cos^2(t) dt}
+$$
+
+calculando primeiro o denominador, temos, utilizando a identidade trigonométrica $cos^2(t) = \frac{1 + cos(2t)}{2}$
+
+$$
+\int_{-2}^{2} cos^2(t) dt = \frac{1}{2} \int_{-2}^{2} 1+cos(2t) dt = \frac{2 - (-2)}{2} + \frac{ sen(2t) }{2}|_{-2}^{2} = 2 + sen(4) 
+$$
+
+e para o numerador precisamos utilizar integral por partes, ja que
+
+$$
+\int_{-2}^{2} cos(t)(4 - t^2)dt = \int_{-2}^{2} 4cos(t)dt - \int_{-2}^{2} t^2 cos(t)dt = 4 sen(t)|_{-2}^{2} - \int_{-2}^{2} t^2 cos(t)dt
+$$
+
+o termo
+
+$$
+\int_{-2}^{2} t^2 cos(t)dt
+$$
+
+pode ser calculado por integral por partes, de modo que
+
+
+$$
+\begin{cases}
+u = t^2\\
+dv = cos(t)dt
+\end{cases}
+$$
+
+então
+
+$$
+\begin{cases}
+du = 2tdt\\
+v = sen(t)
+\end{cases}
+$$
+
+agora aplicando na fórmula da integral por partes, temos
+
+$$
+\int_{}^{} u dv = u \cdot v - \int_{}^{} v du
+$$
+
+assim
+
+$$
+\int_{-2}^{2} t^2 cos(t)dt = t^2 sen(t)|_{-2}^{2} - \int_{-2}^{2} 2t sen(t) dt
+$$
+
+e a integral 
+
+$$
+\int_{-2}^{2} t sen(t) dt
+$$
+
+pode ser calculada mais uma vez por integral por partes
+
+
+$$
+\begin{cases}
+u = 2t\\
+dv = sen(t)dt
+\end{cases}
+$$
+
+então
+
+$$
+\begin{cases}
+du = 2dt\\
+v = -cos(t)
+\end{cases}
+$$
+
+então temos
+
+$$
+\int_{-2}^{2} 2t sen(t) dt = -2t cos(t)|_{-2}^{2} -  \int_{-2}^{2}-cos(t)  2dt = -2\cdot 2 cos(2) - (-2 \cdot -2 \cdot cos(-2) + 2( sen(2) - sen(-2) ) = -8cos(2) + 4sen(2)
+$$
+
+então
+
+$$
+\int_{-2}^{2} t^2 cos(t)dt = 2^2 sen(2) - ((-2)^2 sen(-2))  - 4sen(2) = 8sen(2) + 8cos(2) - 4sen(2) = 8cos(2) + 4sen(2)
+$$
+
+então
+
+$$
+4 sen(t)|_{-2}^{2} - \int_{-2}^{2} t^2 cos(t)dt = 8 sen(2) - 4sen(2) - 8cos(2) = 4sen(2) - 8cos(2) 
+$$
