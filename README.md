@@ -132,7 +132,7 @@ $$
 assim
 
 $$
-\int_{-2}^{2} t^2 cos(t)dt = t^2 sen(t)|_{-2}^{2} - \int_{-2}^{2} 2t sen(t) dt
+\int_{-2}^{2} t^2 cos(t)dt = t^2 sen(t)|_{-2}^{2} - \int_{-2}^{2} 2t sen(t)dt
 $$
 
 e a integral 
@@ -175,5 +175,5 @@ $$
 então
 
 $$
-4sen(t)|_{-2}^{2} - \int_{-2}^{2} t^2cos(t)dt = 8sen(2) - 4sen(2) - 8cos(2) = 4sen(2) - 8cos(2) 
+4sen(t)|_{-2}^{2} - \int_{-2}^{2} t^2cos(t)dt = 8sen(2) - 4sen(2) - 8cos(2) = 4sen(2) - 8cos(2)
 $$
